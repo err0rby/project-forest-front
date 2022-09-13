@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addComms, fetchComms } from '../../features/commentSlice';
 import { fetchRequest } from '../../features/requestSlice';
+import style from './Home.module.css'
 
 const Home = () => {
     const [text, setText] = useState('');
@@ -21,7 +22,7 @@ const Home = () => {
     }
 
     return (
-        <>
+        <div className={style.main}>
             <div>
                 {name === "63203a63b275658192f873c0" ? <div>{request.map((req) => {
                     return <div key={req._id}>
@@ -37,10 +38,11 @@ const Home = () => {
                     <div>{com.user.login}</div>
                     <div>{com.text}</div>
                 </>
-            })}</div>
+            })}
+            </div>
             <textarea value={text} onChange={(e) => setText(e.target.value)}></textarea>
             <button onClick={() => {handleSend()}}>send comment</button>
-        </>
+        </div>
     );
 };
 

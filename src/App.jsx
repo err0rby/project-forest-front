@@ -15,28 +15,32 @@ function App() {
 
   if (token) {
     return (
-      <Routes>
+      <>
         <Headers />
-        <Route path="/" element={<Home />} />
-        <Route path="/workers" element={<Workers />} />
-        <Route path="/beforeafter" element={<BeforeAfter />} />
-        <Route path="/signin" element={<Navigate to={<Home />} />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/service" element={<ServiceMap />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/workers" element={<Workers />} />
+          <Route path="/beforeafter" element={<BeforeAfter />} />
+          <Route path="/signin" element={<Navigate to={<Home />} />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/service" element={<ServiceMap />} />
+        </Routes>
+      </>
     );
   }
   return (
-    <Routes>
+    <>
       <Headers />
-      <Route path="/" element={<Home />} />
-      <Route path="/workers" element={<Workers />} />
-      <Route path="/beforeafter" element={<BeforeAfter />} />
-      <Route path="/signin" element={<SignIn />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/service" element={<ServiceMap />} />
-      <Route path="/service/:id" element={<ServiceOne />}/>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/workers" element={<Workers />} />
+        <Route path="/beforeafter" element={<BeforeAfter />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/service" element={<ServiceMap />} />
+        <Route path="/service/:id" element={<ServiceOne />} />
+      </Routes>
+    </>
   );
 }
 
