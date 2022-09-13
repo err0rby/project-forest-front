@@ -18,7 +18,7 @@ const Workers = () => {
           return (
             <div className={styles.worker_card}>
               <div className={styles.worker_card_image}>
-                <img src={`http://localhost:3013/${item.image}`} alt="" />
+                <img src={`http://localhost:3013/img/${item.image}`} alt="" />
               </div>
               <div className={styles.worker_card_info}>
                 <p className={styles.name}>{item.name}</p>
