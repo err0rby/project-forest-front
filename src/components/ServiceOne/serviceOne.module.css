@@ -1,0 +1,41 @@
+.mainServiceOne {}
+
+.serviceNameOne {
+    color: #333333;
+    font: 30px 'Roboto Slab';
+    background-color: rgb(237, 230, 230);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceOneAll {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceOneDesc {
+    width: 40%;
+    height: 80%;
+    font: 16px 'Roboto';
+}
+
+.serviceOneImage {
+    width: 60%;
+    height: 80%;
+}
+
+.serviceRequest {}
+
+.firstInput {
+    margin-bottom: 0.5%;
+}
+
+.first,
+.second {
+    margin-right: 0.5%;
+}
