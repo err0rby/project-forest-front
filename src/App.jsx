@@ -21,9 +21,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/workers" element={<Workers />} />
           <Route path="/beforeafter" element={<BeforeAfter />} />
-          <Route path="/signin" element={<Navigate to={<Home />} />} />
+          <Route path="/signin" element={<Navigate to='/' />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/service" element={<ServiceMap />} />
+          <Route path="/service/:id" element={<ServiceOne />} />
         </Routes>
       </>
     );

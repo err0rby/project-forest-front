@@ -34,10 +34,10 @@ const Home = () => {
                 })}</div> : ''}
             </div>
             <div>{comments.map((com) => {
-                return <>
+                return <div key={com._id}>
                     <div>{com.user.login}</div>
                     <div>{com.text}</div>
-                </>
+                </div>
             })}
             </div>
             <textarea value={text} onChange={(e) => setText(e.target.value)}></textarea>
