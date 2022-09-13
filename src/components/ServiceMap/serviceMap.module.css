@@ -1,0 +1,13 @@
+.mapMainOfMain {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.mapMain {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 85%;
+}
