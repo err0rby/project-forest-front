@@ -7,6 +7,7 @@ import Headers from "./components/Headers/Headers";
 import Workers from "./components/Workers/Workers";
 import ServiceMap from "./components/ServiceMap/ServiceMap";
 import { useSelector } from "react-redux";
+import ServiceOne from "./components/ServiceOne/ServiceOne";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/service" element={<ServiceMap />} />
+      <Route path="/service/:id" element={<ServiceOne />}/>
     </Routes>
   );
 }
