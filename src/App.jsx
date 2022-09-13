@@ -24,6 +24,7 @@ function App() {
           <Route path="/signin" element={<Navigate to={<Home />} />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/service" element={<ServiceMap />} />
+          <Route path="/service/:id" element={<ServiceOne />} />
         </Routes>
       </>
     );

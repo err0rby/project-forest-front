@@ -1,4 +1,6 @@
-.mainServiceOne {}
+.mainServiceOne {
+
+}
 
 .serviceNameOne {
     color: #333333;
@@ -8,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 4%;
 }
 
 .serviceOneAll {
@@ -38,4 +41,11 @@
 .first,
 .second {
     margin-right: 0.5%;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

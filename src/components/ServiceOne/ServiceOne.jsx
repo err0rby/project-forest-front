@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { addRequest } from '../../features/requestSlice';
 import { fetchServices } from '../../features/serviceSlice';
 import styles from './serviceOne.module.css'
 
@@ -41,11 +42,12 @@ const ServiceOne = () => {
     }
 
     const handleAdd = () => {
-
+        console.log(name, number, address, id)
+        dispatch(addRequest({ name, number, address, id }))
     }
 
     return (
-        <div>
+        <div className={styles.main}>
             {filtered.map((elem) => {
                 return (
                     <div className={styles.mainServiceOne}>
@@ -54,7 +56,7 @@ const ServiceOne = () => {
                         </div>
                         <div className={styles.serviceOneAll}>
                             <h3 className={styles.serviceOneDesc}>{elem.description}</h3>
-                            <img className={styles.serviceOneImage} src={`http://localhost:3013/${elem.image}`} />
+                            <img className={styles.serviceOneImage} src={`http://localhost:3013/img/${elem.image}`} />
                         </div>
                         <div className={styles.serviceRequest}>
                             <div className={styles.firstInput}>
@@ -63,7 +65,6 @@ const ServiceOne = () => {
                             </div>
                             <div className={styles.secondInput}>
                                 <input className={styles.second} onChange={handleAddress} value={address} />
-                                <input onChange={handleWork} value={work} />
                             </div>
                             <button onClick={handleAdd}>Сделать заявку</button>
                         </div>
