@@ -5,8 +5,12 @@ import logo_telephone from "../Headers/img/telephone.png"
 import logo_time from "../Headers/img/time.png"
 import logo_telegram from "../Headers/img/telegram.png"
 import logo_whatsapp from "../Headers/img/whatsapp.png"
+import logoFirm from "../Headers/img/logo.png"
+import { useSelector } from "react-redux";
 
 const Headers = () => {
+  const name = useSelector(state => state.applicationSlice.name);
+
   return (
     <div className={styles.headers}>
       <div className={styles.first_Head}>
@@ -64,13 +68,14 @@ const Headers = () => {
               </div>
             </div>
           </div>
+          {name === '63203a63b275658192f873c0' ? <Link to='/admin'><div><img width={35} src="https://shumoff.ua/shumoffbiz/img/icon/i1.png" alt="asdasd" /></div></Link> : null}
         </div>
       </div>
       <div className={styles.second_Head}>
         <div className={styles.BlocksOne}>
             <div className={styles.hedImg}>
             <Link to="/"> <img
-            src="https://demos.qreativethemes.com/thelandscaper/wp-content/uploads/sites/2/2015/07/logo.png"
+            src={logoFirm}
             alt="q" /> </Link>
             </div>
             </div>
@@ -78,8 +83,8 @@ const Headers = () => {
             <Link to="/" className={styles.linkText}> <h4>Главная</h4> </Link>
             <Link to="/products" className={styles.linkText}> <h4>Магазин</h4> </Link>
             <Link to="/service" className={styles.linkText}> <h4>Сервисы</h4> </Link>
-            <Link to="/" className={styles.linkText}> <h4>До/После</h4> </Link>
-            <Link to="/" className={styles.linkText}> <h4>О нас</h4> </Link>
+            <Link to="/beforeafter" className={styles.linkText}> <h4>До/После</h4> </Link>
+            <Link to="/workers" className={styles.linkText}> <h4>О нас</h4> </Link>
         </div>
       </div>
     </div>
