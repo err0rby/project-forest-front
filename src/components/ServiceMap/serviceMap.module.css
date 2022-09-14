@@ -13,7 +13,7 @@
 }
 
 .ourServices {
-    height: 150px;
+    height: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@
     margin-top: 0%;
     color: #333333;
     font: 48px 'Roboto';
-    background-image: url('https://w-hatsapp.ru/wp-content/uploads/2015/10/fon-1.png');
+    background-image: url('https://demos.qreativethemes.com/thelandscaper/wp-content/uploads/sites/2/2015/09/leafs_white.png');
 }
 
 .service {

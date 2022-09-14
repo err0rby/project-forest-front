@@ -12,27 +12,16 @@ const Home = () => {
     const comments = useSelector(state => state.commentSlice.comments);
 
     useEffect(() => {
-        dispatch(fetchRequest());
         dispatch(fetchComms());
     }, [dispatch]);
 
     const handleSend = () => {
-        dispatch(addComms({name, text}));
+        dispatch(addComms({ name, text }));
         setText('')
     }
 
     return (
         <div className={style.main}>
-            <div>
-                {name === "63203a63b275658192f873c0" ? <div>{request.map((req) => {
-                    return <div key={req._id}>
-                        <div>{req.yourName}</div>
-                        <div>{req.yourAddress}</div>
-                        <div>{req.phoneNumber}</div>
-                        <div>{req.workDescription.name}</div>
-                    </div>
-                })}</div> : ''}
-            </div>
             <div>{comments.map((com) => {
                 return <div key={com._id}>
                     <div>{com.user.login}</div>
@@ -41,7 +30,7 @@ const Home = () => {
             })}
             </div>
             <textarea value={text} onChange={(e) => setText(e.target.value)}></textarea>
-            <button onClick={() => {handleSend()}}>send comment</button>
+            <button onClick={() => { handleSend() }}>send comment</button>
         </div>
     );
 };

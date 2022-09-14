@@ -3,6 +3,7 @@
     margin-right: 1.5%;
     margin-top: 1%;
     height: 400px;
+    transition: 250ms;
 }
 
 .serviceMain:hover {
