@@ -76,8 +76,8 @@ const Headers = () => {
             </div>
         <div className={styles.BlocksTwo}>
             <Link to="/" className={styles.linkText}> <h4>Главная</h4> </Link>
-            <Link to="/" className={styles.linkText}> <h4>Магазин</h4> </Link>
-            <Link to="/" className={styles.linkText}> <h4>Сервисы</h4> </Link>
+            <Link to="/products" className={styles.linkText}> <h4>Магазин</h4> </Link>
+            <Link to="/service" className={styles.linkText}> <h4>Сервисы</h4> </Link>
             <Link to="/" className={styles.linkText}> <h4>До/После</h4> </Link>
             <Link to="/" className={styles.linkText}> <h4>О нас</h4> </Link>
         </div>
