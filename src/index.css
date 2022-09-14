@@ -17,12 +17,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+/* 
 .slayden-savnena {  
   height: 74vw;
   margin: 1vw auto;
-  max-height: 748px;
-  width: 80%;
+  max-height: 500px;
+  width: 55%;
   overflow: hidden;
 }
 .slayden-savnena figure {  
@@ -124,4 +124,4 @@ input#pedsumid::-ms-tooltip {
   0% {width: 0%; }
   50% {width: 80%; }
   100% {width: 50%; }
-}
+} */
