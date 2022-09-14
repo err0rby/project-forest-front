@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import ServiceOne from "./components/ServiceOne/ServiceOne";
 import ShopMap from "./components/ShopMap/ShopMap";
 import AboutUs from "./components/AboutUs/AboutUs";
+import Admin from "./components/Admin/Admin";
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
           <Route path="/signin" element={<Navigate to='/' />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/service" element={<ServiceMap />} />
-          <Route path="/products" element={ <ShopMap/>} />
+          <Route path="/products" element={<ShopMap />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/service/:id" element={<ServiceOne />} />
         </Routes>
       </>
@@ -43,7 +45,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/service" element={<ServiceMap />} />
         <Route path="/service/:id" element={<ServiceOne />} />
-        <Route path="/products" element={ <ShopMap/>} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/products" element={<ShopMap />} />
       </Routes>
     </>
   );
