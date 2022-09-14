@@ -4,12 +4,16 @@ import { useParams } from 'react-router-dom';
 import { addRequest } from '../../features/requestSlice';
 import { fetchServices } from '../../features/serviceSlice';
 import styles from './serviceOne.module.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ServiceOne = () => {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
     const [address, setAddress] = useState('')
-
+    const notify = () => toast("Ваша заявка принята!", {
+        type:'success'
+    });
     const { id } = useParams();
     const service = useSelector((state) => state.serviceSlice.service);
     const dispatch = useDispatch();
@@ -41,7 +45,7 @@ const ServiceOne = () => {
         setName('')
         setAddress('')
         setNumber('')
-        alert('Ваша заявка принята!')
+        notify()
     }
 
     return (
@@ -54,7 +58,7 @@ const ServiceOne = () => {
                         </div>
                         <div className={styles.serviceOneAll}>
                             <h3 className={styles.serviceOneDesc}>{elem.description}</h3>
-                            <img className={styles.serviceOneImage} src={`http://localhost:3013/img/${elem.image}`} />
+                            <img className={styles.serviceOneImage} src={`http://localhost:3013/img/${elem.image}`} alt='asdasdfdsa' />
                         </div>
                         <div className={styles.serviceRequest}>
                             <div className={styles.firstInput}>
@@ -66,6 +70,7 @@ const ServiceOne = () => {
                             </div>
                             <div className={styles.justBtn}>
                                 <button onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
+                                <ToastContainer/>
                             </div>
                         </div>
                     </div>

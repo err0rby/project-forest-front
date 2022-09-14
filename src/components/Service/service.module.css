@@ -52,6 +52,8 @@
 
 .serviceInfo {
     height: 35%;
+    padding: 10px 15px;
+    box-sizing: border-box;
 }
 
 .serviceImages img {
