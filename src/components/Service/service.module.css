@@ -1,9 +1,13 @@
 .serviceMain {
     width: 400px;
-   
     margin-right: 1.5%;
     margin-top: 1%;
     height: 400px;
+}
+
+.serviceMain:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
 }
 
 .imageService {
@@ -23,6 +27,7 @@
     color: #9a9a9a;
     font: 14px 'Roboto';
     word-break: break-all;
+    margin-top: 3%;
 }
 
 .button {
@@ -39,17 +44,13 @@
     color: #6a890b;
 }
 
-.strelka {
-    font-weight: 800;
-}
-
-.serviceImages  {
+.serviceImages {
     height: 55%;
     width: 100%;
 }
 
 .serviceInfo {
-    height: 30%;
+    height: 35%;
 }
 
 .serviceImages img {

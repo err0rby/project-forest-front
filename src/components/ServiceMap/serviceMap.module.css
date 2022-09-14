@@ -11,3 +11,20 @@
     align-items: center;
     width: 85%;
 }
+
+.ourServices {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: whitesmoke; */
+    margin-top: 0%;
+    color: #333333;
+    font: 48px 'Roboto';
+    background-image: url('https://w-hatsapp.ru/wp-content/uploads/2015/10/fon-1.png');
+}
+
+.service {
+    margin-top: 3%;
+}

@@ -13,6 +13,12 @@ const ServiceMap = () => {
     }, [dispatch])
 
     return (
+        <>
+        <div className={styles.ourServices}>
+            <span className={styles.service}>
+            Наши услуги
+            </span>
+        </div>
         <div className={styles.mapMainOfMain}>
         <div className={styles.mapMain}>
             {service.map((elem) => {
@@ -20,6 +26,7 @@ const ServiceMap = () => {
             })}
         </div>
         </div>
+        </>
     );
 };
 
