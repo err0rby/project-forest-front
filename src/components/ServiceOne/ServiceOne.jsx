@@ -9,7 +9,6 @@ const ServiceOne = () => {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
     const [address, setAddress] = useState('')
-    const [work, setWork] = useState('')
 
     const { id } = useParams();
     const service = useSelector((state) => state.serviceSlice.service);
@@ -37,13 +36,12 @@ const ServiceOne = () => {
         setAddress(e.target.value)
     }
 
-    const handleWork = (e) => {
-        setWork(e.target.value)
-    }
-
     const handleAdd = () => {
-        console.log(name, number, address, id)
         dispatch(addRequest({ name, number, address, id }))
+        setName('')
+        setAddress('')
+        setNumber('')
+        alert('Ваша заявка принята!')
     }
 
     return (
@@ -60,13 +58,15 @@ const ServiceOne = () => {
                         </div>
                         <div className={styles.serviceRequest}>
                             <div className={styles.firstInput}>
-                                <input className={styles.first} onChange={handleName} value={name} />
-                                <input onChange={handleNumber} value={number} />
+                                <input className={styles.first} onChange={handleName} value={name} placeholder='Ваше имя' />
+                                <input onChange={handleNumber} value={number} placeholder='Номер телефона' />
                             </div>
-                            <div className={styles.secondInput}>
-                                <input className={styles.second} onChange={handleAddress} value={address} />
+                            <div className={styles.secondInput} >
+                                <input className={styles.second} onChange={handleAddress} value={address} placeholder='Ваш адрес' />
                             </div>
-                            <button onClick={handleAdd}>Сделать заявку</button>
+                            <div className={styles.justBtn}>
+                                <button onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
+                            </div>
                         </div>
                     </div>
                 )
