@@ -1,0 +1,18 @@
+.Card {
+    width: 320px;
+    margin-bottom: 30px;
+}
+
+.text {
+    color: black;
+    font-size: 18px;
+    font-family: "Roboto Slab";
+    margin: 12px 0;
+}
+
+.Butt button{
+    color: #ffffff;
+    background-color: #98b63c;
+    border: none;
+    padding: 19px 22px;
+}
