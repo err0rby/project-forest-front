@@ -41,7 +41,7 @@ const ServiceOne = () => {
         setName('')
         setAddress('')
         setNumber('')
-        alert('Ваша заявка принята!')
+        alert('Ваша заявка отправлена!')
     }
 
     return (
