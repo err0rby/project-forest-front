@@ -8,6 +8,7 @@ import Workers from "./components/Workers/Workers";
 import ServiceMap from "./components/ServiceMap/ServiceMap";
 import { useSelector } from "react-redux";
 import ServiceOne from "./components/ServiceOne/ServiceOne";
+import ShopMap from "./components/ShopMap/ShopMap";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signin" element={<Navigate to={<Home />} />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/service" element={<ServiceMap />} />
+          <Route path="/products" element={ <ShopMap/>} />
         </Routes>
       </>
     );
@@ -39,6 +41,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/service" element={<ServiceMap />} />
         <Route path="/service/:id" element={<ServiceOne />} />
+        <Route path="/products" element={ <ShopMap/>} />
       </Routes>
     </>
   );

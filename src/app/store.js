@@ -4,6 +4,7 @@ import workersSlice from "../features/workersSlice";
 import requestSlice from "../features/requestSlice";
 import serviceSlice from "../features/serviceSlice";
 import commentSlice from "../features/commentSlice";
+import shopSlice from "../features/shopSlice";
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         requestSlice,
         serviceSlice,
         commentSlice,
+        shopSlice,
     }
 });
 
