@@ -52,7 +52,7 @@
   }
   .slayden-savnena1 figure {  
     /* Первая часть: 2 картинка */
-    background-image: url(../img/Home_after.jpg);
+    background-image: url(../img/home_after.jpg);
     background-size: cover;
     font-size: 0;
     height: 100%;
@@ -82,7 +82,7 @@
   }
   #obavenusab {
     /* Первая часть: 1 картинка */
-    background-image: url(../img/Home_before.jpg);
+    background-image: url(../img/home_before.jpg);
     background-size: cover;
     bottom: 0;
     border-right: 5px solid rgba(243, 240, 240, 0.7);
