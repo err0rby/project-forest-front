@@ -9,6 +9,7 @@ import ServiceMap from "./components/ServiceMap/ServiceMap";
 import { useSelector } from "react-redux";
 import ServiceOne from "./components/ServiceOne/ServiceOne";
 import ShopMap from "./components/ShopMap/ShopMap";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Headers />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/workers" element={<Workers />} />
+          <Route path="/workers" element={<AboutUs />} />
           <Route path="/beforeafter" element={<BeforeAfter />} />
           <Route path="/signin" element={<Navigate to='/' />} />
           <Route path="/signup" element={<SignUp />} />
@@ -36,7 +37,7 @@ function App() {
       <Headers />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/workers" element={<Workers />} />
+        <Route path="/workers" element={<AboutUs />} />
         <Route path="/beforeafter" element={<BeforeAfter />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />

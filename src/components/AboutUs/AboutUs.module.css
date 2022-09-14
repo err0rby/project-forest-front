@@ -1,0 +1,106 @@
+.head {
+  width: 100%;
+  height: 220px;
+  text-align: center;
+  background: url("https://demos.qreativethemes.com/thelandscaper/wp-content/uploads/sites/2/2015/09/leafs_white.png");
+  margin-bottom: 20px;
+  padding-top: 100px;
+  font-family: "calibry";
+}
+
+.text {
+  color: black;
+  font-size: 18px;
+}
+
+.AboutUs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.One {
+  width: 30%;
+  padding-right: 30px;
+}
+
+.One hr {
+  width: 100%;
+  margin: auto;
+  border: 1px dotted #9fc612;
+}
+
+.Title {
+  color: #9fc612;
+  font-family: "calibry";
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.Text {
+  margin-top: 10px;
+  font-family: "calibry";
+  font-size: 19px;
+  color: #9a9a9a;
+}
+
+.Two {
+  width: 45%;
+}
+
+.block {
+    width: 75%;
+    margin: auto;
+  }
+
+.Title2 {
+  color: #9fc612;
+  font-family: "calibry";
+  font-size: 34px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+.block hr{
+  width: 100%;
+  margin: auto;
+  border: 1px dotted #9fc612;
+}
+
+/* //////////////////////////////////////////////////////////// */
+
+.info {
+    width: 100%;
+    margin: 60px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.blocks1 {
+    width: 15%;
+}
+
+.infs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kub {
+    border: 4px solid #bdb9b9;
+    padding: 0 8px;
+    color: #9fc612;
+}
+
+.title1 {
+    display: flex;
+    justify-content: center;
+    color: #464646;
+}
+
+.text1 {
+    color: #bdb9b9;
+    padding-top: 10px;
+}
