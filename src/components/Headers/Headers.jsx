@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../Headers/Headers.module.css";
 import logo_home from "../Headers/img/home.png"
 import logo_telephone from "../Headers/img/telephone.png"
@@ -10,6 +10,21 @@ import { useSelector } from "react-redux";
 
 const Headers = () => {
   const name = useSelector(state => state.applicationSlice.name);
+  const token = useSelector(state => state.applicationSlice.token);
+  const navigate = useNavigate();
+
+  const handleClean = () => {
+    localStorage.clear()
+    window.location.reload()
+  }
+
+  const handleLin = () => {
+    navigate('/signin')
+  }
+
+  const handleLog = () => {
+    navigate('/signup')
+  }
 
   return (
     <div className={styles.headers}>
@@ -70,21 +85,22 @@ const Headers = () => {
           </div>
           {name === '63203a63b275658192f873c0' ? <Link to='/admin'><div><img width={35} src="https://shumoff.ua/shumoffbiz/img/icon/i1.png" alt="asdasd" /></div></Link> : null}
         </div>
+        {token ? <div className={styles.just}><button onClick={handleClean}>Выход</button></div> : <div className={styles.just}><button onClick={handleLin}>Вход</button><button onClick={handleLog}>Регистрация</button></div>}
       </div>
       <div className={styles.second_Head}>
         <div className={styles.BlocksOne}>
-            <div className={styles.hedImg}>
+          <div className={styles.hedImg}>
             <Link to="/"> <img
-            src={logoFirm}
-            alt="q" /> </Link>
-            </div>
-            </div>
+              src={logoFirm}
+              alt="q" /> </Link>
+          </div>
+        </div>
         <div className={styles.BlocksTwo}>
-            <Link to="/" className={styles.linkText}> <h4>Главная</h4> </Link>
-            <Link to="/products" className={styles.linkText}> <h4>Магазин</h4> </Link>
-            <Link to="/service" className={styles.linkText}> <h4>Сервисы</h4> </Link>
-            <Link to="/beforeafter" className={styles.linkText}> <h4>До/После</h4> </Link>
-            <Link to="/workers" className={styles.linkText}> <h4>О нас</h4> </Link>
+          <Link to="/" className={styles.linkText}> <h4>Главная</h4> </Link>
+          <Link to="/products" className={styles.linkText}> <h4>Магазин</h4> </Link>
+          <Link to="/service" className={styles.linkText}> <h4>Сервисы</h4> </Link>
+          <Link to="/beforeafter" className={styles.linkText}> <h4>До/После</h4> </Link>
+          <Link to="/workers" className={styles.linkText}> <h4>О нас</h4> </Link>
         </div>
       </div>
     </div>
