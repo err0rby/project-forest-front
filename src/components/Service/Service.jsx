@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './service.module.css'
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Service = ({ items }) => {
     return (
@@ -16,5 +17,14 @@ const Service = ({ items }) => {
         </div>
     );
 };
+
+Service.propTypes = {
+    items: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        _id: PropTypes.string.isRequired
+    }).isRequired
+}
 
 export default Service;

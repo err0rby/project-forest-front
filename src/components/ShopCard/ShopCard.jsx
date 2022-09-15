@@ -4,6 +4,7 @@ import styles from "../ShopCard/ShopCard.module.css";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import PropTypes from 'prop-types';
 
 const ShopCard = ({ product, userId }) => {
 
@@ -39,5 +40,14 @@ const ShopCard = ({ product, userId }) => {
     </div>
   );
 };
+
+ShopCard.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired
+  }).isRequired
+}
 
 export default ShopCard;
