@@ -2,6 +2,13 @@
     margin-top: 2%;
 }
 
+.tri {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    align-items: center;
+}
+
 .serviceNameOne {
     color: #333333;
     font: 30px 'Roboto Slab';

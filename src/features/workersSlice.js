@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    workers: []
+    workers: [],
 };
 
 export const fetchWorkers = createAsyncThunk(
