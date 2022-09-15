@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 const ShopCard = ({ sum, setSum, product, userId }) => {
   const basket = useSelector((state) => state.shopSlice.basket);
-  
+
   const dispatch = useDispatch();
   
 
@@ -43,5 +43,6 @@ const ShopCard = ({ sum, setSum, product, userId }) => {
     </div>
   );
 };
+
 
 export default ShopCard;
