@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRequest } from '../../features/requestSlice';
+import { delRequest, fetchRequest } from '../../features/requestSlice';
 import style from './Admin.module.css'
 
 const Admin = () => {
@@ -11,6 +11,10 @@ const Admin = () => {
     useEffect(() => {
         dispatch(fetchRequest());
     }, [dispatch]);
+
+    const handleDel = (id) => {
+        dispatch(delRequest(id))
+    }
 
     return (
         <div className={style.main}>
@@ -23,7 +27,7 @@ const Admin = () => {
                         <div> Адрес:{req.yourAddress}</div>
                         <div> Номер телефона:{req.phoneNumber}</div>
                         <div className={style.pad2}> Вид рыботы:{req.workDescription.name}</div>
-                        <button>Принять заявку</button>
+                        <button onClick={() => handleDel(req._id)}>Принять заявку</button>
                     </div>
                 })}</div>
             </div>
