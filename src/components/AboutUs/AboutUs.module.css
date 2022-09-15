@@ -50,10 +50,14 @@
   width: 45%;
 }
 
+.Two img {
+  width: 100%;
+}
+
 .block {
-    width: 75%;
-    margin: auto;
-  }
+  width: 75%;
+  margin: auto;
+}
 
 .Title2 {
   color: #9fc612;
@@ -63,7 +67,7 @@
   margin-bottom: 10px;
 }
 
-.block hr{
+.block hr {
   width: 100%;
   margin: auto;
   border: 1px dotted #9fc612;
@@ -72,35 +76,35 @@
 /* //////////////////////////////////////////////////////////// */
 
 .info {
-    width: 100%;
-    margin: 60px 0;
-    display: flex;
-    justify-content: space-around;
+  width: 100%;
+  margin: 60px 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .blocks1 {
-    width: 15%;
+  width: 16%;
 }
 
 .infs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .kub {
-    border: 4px solid #bdb9b9;
-    padding: 0 8px;
-    color: #9fc612;
+  border: 4px solid #bdb9b9;
+  padding: 0 8px;
+  color: #9fc612;
 }
 
 .title1 {
-    display: flex;
-    justify-content: center;
-    color: #464646;
+  display: flex;
+  justify-content: center;
+  color: #464646;
 }
 
 .text1 {
-    color: #bdb9b9;
-    padding-top: 10px;
+  color: #bdb9b9;
+  padding-top: 10px;
 }
