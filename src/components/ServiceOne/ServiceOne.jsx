@@ -5,20 +5,23 @@ import { addRequest } from '../../features/requestSlice';
 import { fetchServices } from '../../features/serviceSlice';
 import styles from './serviceOne.module.css'
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { Triangle } from 'react-loader-spinner'
 
 const ServiceOne = () => {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
-    const [address, setAddress] = useState('')
+    const [address, setAddress] = useState('');
+
     const notify = () => toast("Ваша заявка принята!", {
         type: 'success'
     });
     const { id } = useParams();
     const service = useSelector((state) => state.serviceSlice.service);
     const dispatch = useDispatch();
+    const loading = useSelector(state => state.serviceSlice.loading);
 
     const filtered = service.filter((elem) => {
         if (!id) return true
@@ -29,7 +32,7 @@ const ServiceOne = () => {
     useEffect(() => {
         Aos.init({ duration: 2000 })
         dispatch(fetchServices())
-    }, [])
+    }, [dispatch])
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -49,6 +52,20 @@ const ServiceOne = () => {
         setAddress('')
         setNumber('')
         notify()
+    }
+
+    if (loading) {
+        return <div className={styles.tri}>
+            <Triangle
+                height="300"
+                width="300"
+                color="#a2c046"
+                ariaLabel="triangle-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+            />
+        </div>
     }
 
     return (

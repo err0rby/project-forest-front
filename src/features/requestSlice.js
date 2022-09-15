@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     requests: [],
+    loading: false,
 }
 
 export const fetchRequest = createAsyncThunk('request/fetch', async (_, thunkAPI) => {
@@ -64,12 +65,16 @@ const requestSlice = createSlice({
         builder
             .addCase(fetchRequest.fulfilled, (state, action) => {
                 state.requests = action.payload;
+                state.loading = false;
             })
             .addCase(addRequest.fulfilled, (state, action) => {
                 state.requests.push(action.payload)
             })
             .addCase(delRequest.fulfilled, (state, action) => {
                 state.requests = state.requests.filter((elem) => elem._id !== action.payload)
+            })
+            .addCase(fetchRequest.pending, (state, action) => {
+                state.loading = true;
             })
     }
 });
