@@ -39,7 +39,7 @@ const SignIn = () => {
                                     className={styles.loginField}
                                     type='text'
                                     value={login}
-                                    placeholder='логин'
+                                    placeholder='Логин'
                                     onChange={handleSetName}
                                 />
                             </form>
@@ -52,7 +52,7 @@ const SignIn = () => {
                                     className={styles.loginField}
                                     type='password'
                                     value={password}
-                                    placeholder='пароль'
+                                    placeholder='Пароль'
                                     onChange={handleSetPass}
                                 />
                                 <br />
