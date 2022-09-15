@@ -42,7 +42,7 @@ const AboutUs = () => {
         <div className={styles.blocks1}>
             <div className={styles.infs}>
                 <div className={styles.kub}><h1>2015</h1></div>
-                <div className={styles.title1}><h4>Всего 12 наград</h4></div>
+                <div className={styles.title1}><h4>Всего получено 12 наград</h4></div>
             </div>
             <div className={styles.text1}><p>До 2015 года мы несколько раз номинировались и получили в общей сложности 12 наград за ландшафтный дизайн. Мы очень гордимся этим достижением.</p></div>
         </div>
