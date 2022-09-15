@@ -11,6 +11,7 @@ import ServiceOne from "./components/ServiceOne/ServiceOne";
 import ShopMap from "./components/ShopMap/ShopMap";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Admin from "./components/Admin/Admin";
+import Maps from "./components/Maps/Maps";
 
 
 function App() {
