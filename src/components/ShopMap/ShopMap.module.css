@@ -19,3 +19,13 @@
     color: black;
     font-size: 18px;
 }
+
+.basket{
+    position: fixed;
+    left: 1%;
+    width: 27%;
+}
+
+.basket div{
+
+}
