@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addComms, fetchComms } from '../../features/commentSlice';
 import style from './Home.module.css'
-import image from '../Home/image/image.jpg'
 import { Link } from 'react-router-dom';
 import Slider from './Slider';
 

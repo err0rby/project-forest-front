@@ -5,14 +5,16 @@ import { addRequest } from '../../features/requestSlice';
 import { fetchServices } from '../../features/serviceSlice';
 import styles from './serviceOne.module.css'
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const ServiceOne = () => {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
     const [address, setAddress] = useState('')
     const notify = () => toast("Ваша заявка принята!", {
-        type:'success'
+        type: 'success'
     });
     const { id } = useParams();
     const service = useSelector((state) => state.serviceSlice.service);
@@ -25,8 +27,9 @@ const ServiceOne = () => {
     })
 
     useEffect(() => {
+        Aos.init({ duration: 2000 })
         dispatch(fetchServices())
-    })
+    }, [])
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -49,7 +52,7 @@ const ServiceOne = () => {
     }
 
     return (
-        <div className={styles.main}>
+        <div data-aos='zoom-in' className={styles.main}>
             {filtered.map((elem) => {
                 return (
                     <div className={styles.mainServiceOne}>
@@ -65,12 +68,12 @@ const ServiceOne = () => {
                                 <input className={styles.first} onChange={handleName} value={name} placeholder='Ваше имя' />
                                 <input onChange={handleNumber} value={number} placeholder='Номер телефона' />
                             </div>
-                            <div className={styles.secondInput} >
+                            <div className={styles.secondInput}>
                                 <input className={styles.second} onChange={handleAddress} value={address} placeholder='Ваш адрес' />
                             </div>
                             <div className={styles.justBtn}>
                                 <button disabled={!name || !number || !address} onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
-                                <ToastContainer/>
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>

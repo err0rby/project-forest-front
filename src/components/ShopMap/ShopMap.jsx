@@ -14,7 +14,7 @@ const ShopMap = () => {
 
   useEffect(() => {
     dispatch(getProducts());
-    dispatch(fetchBasket({userId}))
+    dispatch(fetchBasket({ userId }))
   }, [dispatch, userId]);
 
   return (
@@ -25,13 +25,13 @@ const ShopMap = () => {
         {products.map((item) => {
           return <ShopCard product={item} userId={userId} />;
         })}
-          {open ? (
-            <div className={styles.basket}>
-              <Basket />
-            </div>
-          ) : (
-            false
-          )}
+        {open ? (
+          <div className={styles.basket}>
+            <Basket />
+          </div>
+        ) : (
+          false
+        )}
       </div>
     </div>
   );

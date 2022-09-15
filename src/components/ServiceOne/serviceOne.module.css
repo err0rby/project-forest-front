@@ -26,6 +26,7 @@
     width: 40%;
     height: 90%;
     font: 16px 'Roboto';
+    word-wrap: break-word;
 }
 
 .serviceOneImage {
