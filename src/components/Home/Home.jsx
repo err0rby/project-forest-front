@@ -6,7 +6,6 @@ import image from '../Home/image/image.jpg'
 import { Link } from 'react-router-dom';
 import Slider from './Slider';
 import { motion } from 'framer-motion';
-import Maps from '../Maps/Maps';
 
 const Home = () => {
     const [text, setText] = useState('');
@@ -60,7 +59,6 @@ const Home = () => {
             <div className={style.main_text2}>
                 <p>Адрес нашей кампании</p>
             </div>
-            <Maps />
         </div>
     );
 };

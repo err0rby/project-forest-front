@@ -30,7 +30,7 @@ const ServiceOne = () => {
     })
 
     useEffect(() => {
-        Aos.init({ duration: 2000 })
+        
         dispatch(fetchServices())
     }, [dispatch])
 
@@ -69,7 +69,7 @@ const ServiceOne = () => {
     }
 
     return (
-        <div data-aos='zoom-in' className={styles.main}>
+        <div className={styles.main}>
             {filtered.map((elem) => {
                 return (
                     <div className={styles.mainServiceOne}>
