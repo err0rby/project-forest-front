@@ -5,18 +5,23 @@ import { addRequest } from '../../features/requestSlice';
 import { fetchServices } from '../../features/serviceSlice';
 import styles from './serviceOne.module.css'
 import { ToastContainer, toast } from 'react-toastify';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import 'react-toastify/dist/ReactToastify.css';
+import { Triangle } from 'react-loader-spinner'
 
 const ServiceOne = () => {
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
-    const [address, setAddress] = useState('')
+    const [address, setAddress] = useState('');
+
     const notify = () => toast("Ваша заявка принята!", {
-        type:'success'
+        type: 'success'
     });
     const { id } = useParams();
     const service = useSelector((state) => state.serviceSlice.service);
     const dispatch = useDispatch();
+    const loading = useSelector(state => state.serviceSlice.loading);
 
     const filtered = service.filter((elem) => {
         if (!id) return true
@@ -25,8 +30,9 @@ const ServiceOne = () => {
     })
 
     useEffect(() => {
+        
         dispatch(fetchServices())
-    })
+    }, [dispatch])
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -48,6 +54,20 @@ const ServiceOne = () => {
         notify()
     }
 
+    if (loading) {
+        return <div className={styles.tri}>
+            <Triangle
+                height="300"
+                width="300"
+                color="#a2c046"
+                ariaLabel="triangle-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+            />
+        </div>
+    }
+
     return (
         <div className={styles.main}>
             {filtered.map((elem) => {
@@ -65,12 +85,12 @@ const ServiceOne = () => {
                                 <input className={styles.first} onChange={handleName} value={name} placeholder='Ваше имя' />
                                 <input onChange={handleNumber} value={number} placeholder='Номер телефона' />
                             </div>
-                            <div className={styles.secondInput} >
+                            <div className={styles.secondInput}>
                                 <input className={styles.second} onChange={handleAddress} value={address} placeholder='Ваш адрес' />
                             </div>
                             <div className={styles.justBtn}>
-                                <button onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
-                                <ToastContainer/>
+                                <button disabled={!name || !number || !address} onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,6 @@ import SignUp from "./components/Auth/SignUp";
 import BeforeAfter from "./components/BeforeAfter/BeforeAfter";
 import Home from "./components/Home/Home";
 import Headers from "./components/Headers/Headers";
-import Workers from "./components/Workers/Workers";
 import ServiceMap from "./components/ServiceMap/ServiceMap";
 import { useSelector } from "react-redux";
 import ServiceOne from "./components/ServiceOne/ServiceOne";

@@ -54,6 +54,22 @@
     background-color: silver;
 }
 
+.just {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.just button {
+  color: aliceblue;
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+}
+
+.just button:hover {
+  border-bottom: 2px solid white;
+}
+
 .BlocksTwo {
     width: 70%;
     background-color: #a2c046;

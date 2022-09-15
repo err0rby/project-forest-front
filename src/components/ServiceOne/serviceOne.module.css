@@ -2,6 +2,13 @@
     margin-top: 2%;
 }
 
+.tri {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    align-items: center;
+}
+
 .serviceNameOne {
     color: #333333;
     font: 30px 'Roboto Slab';
@@ -26,6 +33,7 @@
     width: 40%;
     height: 90%;
     font: 16px 'Roboto';
+    word-wrap: break-word;
 }
 
 .serviceOneImage {
@@ -112,4 +120,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 8%;
+}
+
+.secondInput {
+    margin-left: 25%;
 }

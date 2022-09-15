@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: [],
-  basket: []
+  basket: [],
+  loading: false,
 };
 
 export const getProducts = createAsyncThunk(
@@ -111,20 +112,25 @@ const shopSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getProducts.fulfilled, (state, action) => {
-      state.products = action.payload;
-    })
-    .addCase(fetchBasket.fulfilled, (state, action) => {
-      state.basket = action.payload.basket
-    })
-    .addCase(PushInBasket.fulfilled, (state, action) => {
-      state.basket.push(action.payload)
-    })
-    .addCase(removeFromBasket.fulfilled, (state, action) => {
-      state.basket = state.basket.filter((product) => {
-        return product._id !== action.payload._id
+    builder
+      .addCase(getProducts.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.loading = false;
       })
-    })
+      .addCase(fetchBasket.fulfilled, (state, action) => {
+        state.basket = action.payload.basket
+      })
+      .addCase(PushInBasket.fulfilled, (state, action) => {
+        state.basket.push(action.payload)
+      })
+      .addCase(removeFromBasket.fulfilled, (state, action) => {
+        state.basket = state.basket.filter((product) => {
+          return product._id !== action.payload._id
+        })
+      })
+      .addCase(getProducts.pending, (state, action) => {
+        state.loading = true;
+      })
     .addCase(countPlus.fulfilled, (state, action) => {
       state.basket = state.basket.map((product) => {
         if(product._id === action.payload){
@@ -141,7 +147,7 @@ const shopSlice = createSlice({
         return product
       })
     })
-    
+
   },
 });
 
