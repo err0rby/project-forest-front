@@ -6,8 +6,9 @@ import ShopCard from "../ShopCard/ShopCard";
 import styles from "../ShopMap/ShopMap.module.css";
 import Tops from "./Tops";
 
-const ShopMap = () => {
+const ShopMap = ({modal, setModal}) => {
   const [open, setOpen] = useState(false);
+  const [sum, setSum] = useState(0)
   const products = useSelector((state) => state.shopSlice.products);
   const userId = useSelector(state => state.applicationSlice.name)
   const dispatch = useDispatch();
@@ -18,20 +19,18 @@ const ShopMap = () => {
   }, [dispatch, userId]);
 
   return (
-    <div>
+    <div className={styles.body}>
+      <div className={open ? styles.basket_active : styles.basket}>
+        <img src='https://cdn.icon-icons.com/icons2/2093/PNG/512/garbage_truck_recycling_truck_trash_truck_transportation_automobile_vehicle_icon_128560.png' className={open ? styles.btn_active : styles.btn} onClick={() => setOpen(!open)}></img>
+        <Basket sum={sum} setSum={setSum} modal={modal} setModal={setModal}/>
+      </div>
+      <div className={open ? styles.bs_active : styles.bs}>
       <Tops />
-      <button onClick={() => setOpen(!open)}>Корзина</button>
       <div className={styles.main}>
         {products.map((item) => {
-          return <ShopCard product={item} userId={userId} />;
+          return <ShopCard sum={sum} setSum={setSum} product={item} userId={userId} />;
         })}
-          {open ? (
-            <div className={styles.basket}>
-              <Basket />
-            </div>
-          ) : (
-            false
-          )}
+      </div>
       </div>
     </div>
   );

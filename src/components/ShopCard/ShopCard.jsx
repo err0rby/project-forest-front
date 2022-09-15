@@ -2,13 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { PushInBasket } from "../../features/shopSlice";
 import styles from "../ShopCard/ShopCard.module.css";
 
-const ShopCard = ( {product, userId} ) => {
+const ShopCard = ( {sum, setSum, product, userId} ) => {
 
   const basket = useSelector(state => state.shopSlice.basket)
   const dispatch = useDispatch()
   
 
   function handleAddInBasket(productId){
+    setSum(sum + product.price)
     dispatch(PushInBasket({ userId, productId, product }))
   }
 

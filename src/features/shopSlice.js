@@ -52,6 +52,7 @@ export const removeFromBasket = createAsyncThunk(
   "user/remove",
   async ({ userId, productId, product }, thunkAPI) => {
     try {
+      console.log(userId, productId);
       const res = await fetch("http://localhost:3013/basket/remove", {
         method: "PATCH",
         headers: {
@@ -62,6 +63,42 @@ export const removeFromBasket = createAsyncThunk(
       const user = await res.json();
       console.log(user);
       return product;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
+export const countPlus = createAsyncThunk(
+  "user/plus",
+  async ({ productId }, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:3013/basket/plus", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ productId })
+      });
+      const user = await res.json();
+      return productId;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
+export const countMinus = createAsyncThunk(
+  "user/minus",
+  async ({ productId }, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:3013/basket/minus", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ productId })
+      });
+      const user = await res.json();
+      return productId;
     } catch (e) {
       thunkAPI.rejectWithValue(e);
     }
@@ -86,6 +123,22 @@ const shopSlice = createSlice({
     .addCase(removeFromBasket.fulfilled, (state, action) => {
       state.basket = state.basket.filter((product) => {
         return product._id !== action.payload._id
+      })
+    })
+    .addCase(countPlus.fulfilled, (state, action) => {
+      state.basket = state.basket.map((product) => {
+        if(product._id === action.payload){
+          product.countInBasket += 1
+        }
+        return product
+      })
+    })
+    .addCase(countMinus.fulfilled, (state, action) => {
+      state.basket = state.basket.map((product) => {
+        if(product._id === action.payload){
+          product.countInBasket -= 1
+        }
+        return product
       })
     })
     
