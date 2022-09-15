@@ -50,6 +50,10 @@
   width: 45%;
 }
 
+.Two img{
+  width: 100%;
+}
+
 .block {
     width: 75%;
     margin: auto;
