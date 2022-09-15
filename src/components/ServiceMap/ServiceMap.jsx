@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchServices } from '../../features/serviceSlice';
 import Service from '../Service/Service';
 import styles from './serviceMap.module.css'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import { Triangle } from 'react-loader-spinner'
+
 
 const ServiceMap = () => {
     const service = useSelector((state) => state.serviceSlice.service)
@@ -11,6 +14,7 @@ const ServiceMap = () => {
     const loading = useSelector(state => state.serviceSlice.loading);
 
     useEffect(() => {
+        Aos.init({ duration: 2000 })
         dispatch(fetchServices())
     }, [dispatch])
 
@@ -35,7 +39,7 @@ const ServiceMap = () => {
                     Наши услуги
                 </span>
             </div>
-            <div className={styles.mapMainOfMain}>
+            <div data-aos="fade-up" className={styles.mapMainOfMain}>
                 <div className={styles.mapMain}>
                     {service.map((elem) => {
                         return <Service items={elem} />
