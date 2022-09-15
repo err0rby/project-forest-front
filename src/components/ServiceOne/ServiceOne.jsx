@@ -69,7 +69,7 @@ const ServiceOne = () => {
                                 <input className={styles.second} onChange={handleAddress} value={address} placeholder='Ваш адрес' />
                             </div>
                             <div className={styles.justBtn}>
-                                <button onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
+                                <button disabled={!name || !number || !address} onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
                                 <ToastContainer/>
                             </div>
                         </div>
