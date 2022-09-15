@@ -10,14 +10,19 @@ import ServiceOne from "./components/ServiceOne/ServiceOne";
 import ShopMap from "./components/ShopMap/ShopMap";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Admin from "./components/Admin/Admin";
+import styles from './components/ShopMap/ShopMap.module.css'
+import ModalBuy from "./components/ModalBuy/ModalBuy";
+import { useState } from "react";
 
 
 function App() {
   const token = useSelector(state => state.applicationSlice.token);
+  const [modal, setModal] = useState(false)
 
   if (token) {
     return (
       <>
+        <ModalBuy modal={modal} setModal={setModal} />
         <Headers />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -26,7 +31,7 @@ function App() {
           <Route path="/signin" element={<Navigate to='/' />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/service" element={<ServiceMap />} />
-          <Route path="/products" element={<ShopMap />} />
+          <Route path="/products" element={<ShopMap modal={modal} setModal={setModal} />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/service/:id" element={<ServiceOne />} />
         </Routes>
