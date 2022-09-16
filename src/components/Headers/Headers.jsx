@@ -45,7 +45,7 @@ const Headers = () => {
             </div>
             <div className={styles.slesh}> / </div>
             <div className={styles.text}>
-              <div>
+              <div className={styles.text_tele}>
                 <img
                   src={logo_telephone}
                   alt="q"

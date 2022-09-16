@@ -59,6 +59,9 @@ const Home = () => {
             <div className={style.main_text2}>
                 <p>Адрес нашей кампании</p>
             </div>
+            <div className={style.main_maps}>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5afe904d7ef6e953f635fb861820c3b6b68f39a8861138e3577926f1ff939aff&amp;source=constructor" width="100%" height="400px" frameborder="0"></iframe>
+            </div>
         </div>
     );
 };
