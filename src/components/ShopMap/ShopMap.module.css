@@ -17,9 +17,9 @@
     width: 100%;
     height: 200px;
     text-align: center;
-    background: url("https://demos.qreativethemes.com/thelandscaper/wp-content/uploads/sites/2/2015/09/leafs_white.png");
+    /* background: url("https://demos.qreativethemes.com/thelandscaper/wp-content/uploads/sites/2/2015/09/leafs_white.png"); */
     margin-bottom: 20px;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .text {
@@ -83,12 +83,12 @@
 
 .bs{
     transition: 0.5s;
-    margin-top: 70px;
+    /* margin-top: 70px; */
     transform: translateX(0%);
 }
 .bs_active{
     transition: 0.5s;
-    margin-top: 70px;
+    /* margin-top: 70px; */
     transform: translateX(10%);
 }
 
