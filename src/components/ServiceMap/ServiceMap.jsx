@@ -35,9 +35,15 @@ const ServiceMap = () => {
     return (
         <>
             <div className={styles.ourServices}>
-                <span className={styles.service}>
-                    Наши услуги
-                </span>
+                <div className={styles.service}>
+                    <p>
+                        Наши услуги
+                    </p>
+                    <p>
+                        список опций
+                    </p>
+                </div>
+                
             </div>
             <div data-aos="fade-up" className={styles.mapMainOfMain}>
                 <div className={styles.mapMain}>

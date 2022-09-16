@@ -7,6 +7,7 @@
     width: 100%;
     margin: auto;
     padding: 20px 0;
+    margin-top: 50px;
 }
 
 .gallery_info p:first-child {
@@ -33,6 +34,8 @@
     width: 60%;
     overflow: hidden;
     border: 5px solid rgb(222, 222, 222);
+    margin-bottom: 50px;
+    /* margin-top: 50px; */
   }
   .slayden-savnena2 {  
     height: 74vw;
@@ -41,6 +44,8 @@
     width: 60%;
     overflow: hidden;
     border: 5px solid rgb(222, 222, 222);
+    margin-bottom: 50px;
+    /* margin-top: 50px; */
   }
   .slayden-savnena3 {  
     height: 74vw;
@@ -49,6 +54,8 @@
     width: 60%;
     overflow: hidden;
     border: 5px solid rgb(222, 222, 222);
+    margin-bottom: 50px;
+    /* margin-top: 50px; */
   }
   .slayden-savnena1 figure {  
     /* Первая часть: 2 картинка */
