@@ -52,7 +52,7 @@
 
 .BlocksOne {
     width: 30%;
-    background-color: silver;
+    background-color: rgb(161, 161, 161);
 }
 
 .just {
@@ -78,6 +78,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 10000000;
 }
 
 .hedImg {
@@ -91,7 +92,17 @@
     font-family: "Roboto";
     font-size: 17px;
     text-decoration: none;
-    padding: 32px 20px 33px 20px;
+    padding: 32px 20px 5px 20px;
+    margin-bottom: 33px;
+}
+
+.linkText:focus {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 17px;
+  text-decoration: none;
+  padding: 32px 20px 5px 20px;
+  border-bottom: 2.5px solid #ffffff;
 }
 
 .text_tele img{

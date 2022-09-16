@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import image from '../Home/image/image.jpg'
 import image2 from '../Home/image/image2.jpg'
 import image3 from '../Home/image/image3.jpg'
+import L1 from '../Home/image/L1.jpg'
+import L2 from '../Home/image/L2.jpg'
+import L3 from '../Home/image/L3.jpg'
 import style from './Home.module.css'
 
 const Slider = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const images = [
-        <img key={image} src={image} />,
-        <img key={image2} src={image2} />,
-        <img key={image3} src={image3} />
+        <img key={L1} src={L1} />,
+        <img key={L2} src={L2} />,
+        <img key={L3} src={L3} />
     ]
 
     useEffect(() => {
