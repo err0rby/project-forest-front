@@ -5,6 +5,7 @@ import requestSlice from "../features/requestSlice";
 import serviceSlice from "../features/serviceSlice";
 import commentSlice from "../features/commentSlice";
 import shopSlice from "../features/shopSlice";
+import userSlice from "../features/userSlice";
 
 const store = configureStore({
     reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
         serviceSlice,
         commentSlice,
         shopSlice,
+        userSlice,
     }
 });
 

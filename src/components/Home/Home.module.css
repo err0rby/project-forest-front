@@ -1,214 +1,243 @@
 .main {
-    transition: 250ms;
-  }
-  
-  .homeImg {
-    width: 100%;
-    background-color: black;
-    z-index: 10;
-  }
-  
-  .imageHomeOne {
-    width: 100%;
-    height: 600px;
-  }
-  
-  
-  .textAbove {
-    position: absolute;
-    top: 45%;
-    text-transform: uppercase;
-    color: #ffffff;
-    /* font: 25px "Roboto Slab"; */
-    margin-left: 34%;
-    font-size: 25px;
-    font-weight: bold;
-    width: 500px;
-    text-align: center;
-    /* font: bold 24px/34px Helvetica, Sans-Serif; */
-  }
-  
-  .buttonsHome {
-    display: flex;
-    position: absolute;
-    top: 55%;
-    /* font: 25px "Roboto Slab"; */
-    margin-left: 43%;
-    width: 250px;
-    text-align: center;
-  }
-  
-  .buttonAbout {
-    background-color: #a2c046;
-    color: #ffffff;
-    padding: 18px 22px;
-    border: none;
-    /* font: 15px "Roboto"; */
-    margin-right: 10%;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-  }
-  
-  .buttonAbout1 {
-    background-color: unset;
-    color: #ffffff;
-    padding: 18px 22px;
-    border: none;
-    /* font: 15px "Roboto"; */
-    margin-right: 10%;
-    background-color: #a3be4f;
-    /* border: 1px solid silver; */
-    cursor: pointer;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-  }
-  
-  .buttonAbout:hover {
-    background-color: silver;
-    /* border: 1px solid silver; */
-  }
-  
-  .buttonAbout1:hover {
-    background-color: silver;
-    transition: 0.8s;
-  }
-  
-  .slider {
-    /* position: relative; */
-    width: 100%;
-    height: 600px;
-    margin: auto;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .sliderImg {
-    position: absolute;
-    width: 100%;
-    height: 500px;
-    transition: all 0.2s;
-  }
-  
-  .sliderImgPrev {
-    transform: translateX(-100%);
-  }
-  
-  .sliderImgNext {
-    transform: translateX(100%);
-  }
-  
-  .main_text p {
-    padding: 80px 0;
-    font-size: 22px;
-    font-weight: bold;
-    color: #a3be4f;
-    text-align: center;
-  }
-  
-  .main_text2 p {
-    padding: 80px 0;
-    font-size: 22px;
-    font-weight: bold;
-    background-color: #f0f0f0;
-    color: gray;
-    text-align: center;
-  }
-  
-  .main_comments {
-    
-    height: 400px;
-    background-image: url("https://demos.qreativethemes.com/thelandscaper/wp-content/uploads/sites/2/2015/09/leafs_white.png");
-    overflow: hidden;
-  }
-  
-  .main_comments p {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 30px 0;
-  }
-  
-  .main_comments_comments {
-    cursor: grab;
-    width: max-content;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 30px 0;
-  }
-  .main_comments_comments :active{
-    cursor: grabbing;
-  }
-  
-  .card_comments {
-    cursor: grab;
-    width: 400px;
-    height: 95%;
-    background-color: #c4e070;
-    margin: 10px 50px;
-  }
-  
-  .card_comments1 p {
-    font-size: 25px;
-    font-weight: bold;
-    width: 200px;
-    margin: auto;
-  }
-  
-  .card_comments2 p {
-    font-size: 16px;
-    width: 80px;
-    margin: auto;
-  }
-  
-  .main_form {
-    width: 100%;
-    height: 150px;
-  }
-  
-  .main_form p {
-    text-align: center;
-    font-size: 17px;
-    padding: 20px 0;
-  }
-  
-  .form {
-    /* padding-top: 50px; */
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-  }
-  
-  .form_input {
-    width: 70%;
-    height: 100%;
-  }
-  
-  .form_input input {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    border: 1px solid gray;
-  }
-  
-  .form_btn {
-    width: 29%;
-    height: 100%;
-  }
-  
-  .form_btn button {
-    width: 100%;
-    padding: 11.5px 0;
-    border: none;
-    background-color: #a3be4f;
-    border: 1px solid #a3be4f;
-    color: white;
-  }
-  
+  transition: 250ms;
+}
+
+.homeImg {
+  width: 100%;
+}
+
+.card_like {
+  display: flex;
+  justify-content: center;
+}
+
+.btncom {
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.btncom button {
+  margin-right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 5px;
+  transition: 1s;
+}
+
+.btncom button:hover {
+  transform: rotate(360deg);
+}
+
+.card_like button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.imageHomeOne {
+  width: 100%;
+  height: 600px;
+}
+
+
+.textAbove {
+  position: absolute;
+  top: 45%;
+  text-transform: uppercase;
+  color: #ffffff;
+  /* font: 25px "Roboto Slab"; */
+  margin-left: 34%;
+  font-size: 25px;
+  width: 500px;
+  text-align: center;
+  /* font: bold 24px/34px Helvetica, Sans-Serif; */
+}
+
+.buttonsHome {
+  display: flex;
+  position: absolute;
+  top: 55%;
+  /* font: 25px "Roboto Slab"; */
+  margin-left: 43%;
+  width: 250px;
+  text-align: center;
+}
+
+.buttonAbout {
+  background-color: #a2c046;
+  color: #ffffff;
+  padding: 18px 22px;
+  border: none;
+  /* font: 15px "Roboto"; */
+  margin-right: 10%;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.buttonAbout1 {
+  background-color: unset;
+  color: #ffffff;
+  padding: 18px 22px;
+  border: none;
+  /* font: 15px "Roboto"; */
+  margin-right: 10%;
+  background-color: #a3be4f;
+  /* border: 1px solid silver; */
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.buttonAbout:hover {
+  background-color: silver;
+  /* border: 1px solid silver; */
+}
+
+.buttonAbout1:hover {
+  background-color: silver;
+  transition: 0.8s;
+}
+
+.slider {
+  /* position: relative; */
+  width: 100%;
+  height: 600px;
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sliderImg {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  transition: all 0.2s;
+}
+
+.sliderImgPrev {
+  transform: translateX(-100%);
+}
+
+.sliderImgNext {
+  transform: translateX(100%);
+}
+
+.main_text p {
+  padding: 80px 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #a3be4f;
+  text-align: center;
+}
+
+.main_text2 p {
+  padding: 80px 0;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  color: gray;
+  text-align: center;
+}
+
+.main_comments {
+
+  height: 400px;
+  background-image: url("https://demos.qreativethemes.com/thelandscaper/wp-content/uploads/sites/2/2015/09/leafs_white.png");
+  overflow: hidden;
+}
+
+.main_comments p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.main_comments_comments {
+  cursor: grab;
+  width: max-content;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0;
+}
+
+.card_comments {
+  cursor: grab;
+  border-radius: 10px;
+  width: 400px;
+  height: 95%;
+  background-color: white;
+  margin: 10px 50px;
+}
+
+.card_comments1 p {
+  font-size: 18px;
+  width: 70px;
+  margin: auto;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.card_comments2 p {
+  font-size: 15px;
+  width: 80px;
+  margin: auto;
+  height: 150px;
+}
+
+.main_form {
+  width: 100%;
+  height: 150px;
+}
+
+.main_form p {
+  text-align: center;
+  font-size: 17px;
+  padding: 20px 0;
+}
+
+.form {
+  /* padding-top: 50px; */
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.form_input {
+  width: 70%;
+  height: 100%;
+}
+
+.form_input input {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid gray;
+}
+
+.form_btn {
+  width: 29%;
+  height: 100%;
+}
+
+.form_btn button {
+  width: 100%;
+  padding: 11.5px 0;
+  border: none;
+  background-color: #a3be4f;
+  border: 1px solid #a3be4f;
+  color: white;
+}
