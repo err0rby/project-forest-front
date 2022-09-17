@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeAllBasket } from "../../features/shopSlice";
 import "./ModalBuy.css";
 
-const ModalBuy = ({ modal, setModal }) => {
+const ModalBuy = ({ modal, setModal, setSum }) => {
     const userId = useSelector(state => state.applicationSlice.name)
     const dispatch = useDispatch()
 
     function handleRemoveBasket(e){
         e.preventDefault();
         dispatch(removeAllBasket({userId}))
+        setSum(0)
         setModal(false)
     }
 

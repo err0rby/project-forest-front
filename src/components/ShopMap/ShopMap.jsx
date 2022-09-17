@@ -7,9 +7,8 @@ import styles from "../ShopMap/ShopMap.module.css";
 import Tops from "./Tops";
 import { Triangle } from 'react-loader-spinner';
 
-const ShopMap = ({modal, setModal}) => {
+const ShopMap = ({modal, setModal, sum, setSum}) => {
   const [open, setOpen] = useState(false);
-  const [sum, setSum] = useState(0)
   const products = useSelector((state) => state.shopSlice.products);
   const userId = useSelector(state => state.applicationSlice.name)
   const dispatch = useDispatch();
