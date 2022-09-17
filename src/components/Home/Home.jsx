@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addComms, addLike, deleteComm, deleteLike, fetchComms } from '../../features/commentSlice';
 import style from './Home.module.css'
@@ -12,14 +12,20 @@ const Home = () => {
     const dispatch = useDispatch();
     const name = useSelector(state => state.applicationSlice.name);
     const comments = useSelector(state => state.commentSlice.comments);
-    const count = comments.length;
     const [like, setLike] = useState(true);
     const users = useSelector(state => state.userSlice.users);
+    
+    const carousel = useRef()
+    let [width, setWidth] = useState(0)
 
     useEffect(() => {
         dispatch(fetchComms());
         dispatch(fetchUsers());
     }, [dispatch]);
+
+    useEffect(() => {
+        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+    });
 
     const handleSend = () => {
         dispatch(addComms({ name, text }));
@@ -56,8 +62,8 @@ const Home = () => {
             <div className={style.main_text}>
                 <p>Отзывы наших клиентов</p>
             </div>
-            <motion.div className={style.main_comments}>
-                <motion.div drag='x' dragConstraints={{ right: 0, left: count * -365 }} className={style.main_comments_comments}>
+            <motion.div ref={carousel} className={style.main_comments}>
+                <motion.div drag='x' dragConstraints={{ right: 0, left: -width }} className={style.main_comments_comments}>
                     {comments.map((com) => {
                         return <motion.div className={style.card_comments} key={com._id}>
                             {users.map((user) => {
