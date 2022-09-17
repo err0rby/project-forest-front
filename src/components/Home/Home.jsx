@@ -1,27 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addComms, fetchComms } from '../../features/commentSlice';
+import { addComms, addLike, deleteComm, deleteLike, fetchComms } from '../../features/commentSlice';
 import style from './Home.module.css'
-import image from '../Home/image/image.jpg'
 import { Link } from 'react-router-dom';
 import Slider from './Slider';
 import { motion } from 'framer-motion';
+import { fetchUsers } from '../../features/userSlice';
 
 const Home = () => {
     const [text, setText] = useState('');
     const dispatch = useDispatch();
     const name = useSelector(state => state.applicationSlice.name);
     const comments = useSelector(state => state.commentSlice.comments);
-    const count = comments.length
-    console.log(comments.length)
+    const count = comments.length;
+    const [like, setLike] = useState(true);
+    const users = useSelector(state => state.userSlice.users);
 
     useEffect(() => {
         dispatch(fetchComms());
+        dispatch(fetchUsers());
     }, [dispatch]);
 
     const handleSend = () => {
         dispatch(addComms({ name, text }));
         setText('')
+    }
+
+    const handleDel = (id) => {
+        dispatch(deleteComm(id))
+    }
+
+    const handleLike = (name, id) => {
+        if(like){
+            dispatch(addLike({name, id}));
+            setLike(false);
+        }
+        if(!like){
+            dispatch(deleteLike({name, id}));
+            setLike(true);
+        }
     }
 
     return (
@@ -40,13 +57,20 @@ const Home = () => {
                 <p>Отзывы наших клиентов</p>
             </div>
             <motion.div className={style.main_comments}>
-                <motion.div drag='x' dragConstraints={{right: 0, left: count * -365}} className={style.main_comments_comments}>
-                {comments.map((com) => {
-                return <motion.div className={style.card_comments} key={com._id}>
+                <motion.div drag='x' dragConstraints={{ right: 0, left: count * -365 }} className={style.main_comments_comments}>
+                    {comments.map((com) => {
+                        return <motion.div className={style.card_comments} key={com._id}>
+                            {users.map((user) => {
+                                if(user._id === name){
+                                    return <div className={style.btncom}><button onClick={() => {handleDel(com._id)}}>X</button></div>
+                                }
+                                return null
+                            })}
                             <div className={style.card_comments1}><p>{com.user.login}</p></div>
                             <div className={style.card_comments2}><p>{com.text}</p></div>
+                            <div className={style.card_like}><button onClick={() => {handleLike(name, com._id)}}>❤️</button><div>{com.likes.length}</div></div>
                         </motion.div>
-            })}
+                    })}
                 </motion.div>
             </motion.div>
             <div className={style.main_form}>

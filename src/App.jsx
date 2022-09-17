@@ -10,9 +10,9 @@ import ServiceOne from "./components/ServiceOne/ServiceOne";
 import ShopMap from "./components/ShopMap/ShopMap";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Admin from "./components/Admin/Admin";
-import styles from './components/ShopMap/ShopMap.module.css'
 import ModalBuy from "./components/ModalBuy/ModalBuy";
 import { useState } from "react";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/service/:id" element={<ServiceOne />} />
         </Routes>
+        <Footer />
       </>
     );
   }
@@ -52,6 +53,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/products" element={<ShopMap />} />
       </Routes>
+      <Footer />
     </>
   );
 }
