@@ -69,6 +69,24 @@ export const removeFromBasket = createAsyncThunk(
     }
   }
 );
+export const removeAllBasket = createAsyncThunk(
+  "basketAll/remove",
+  async ({ userId }, thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:3013/allBasket/remove", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ userId })
+      });
+      const user = await res.json();
+      return user;
+    } catch (e) {
+      thunkAPI.rejectWithValue(e);
+    }
+  }
+);
 export const countPlus = createAsyncThunk(
   "user/plus",
   async ({ productId }, thunkAPI) => {
@@ -146,6 +164,11 @@ const shopSlice = createSlice({
         }
         return product
       })
+    })
+    .addCase(removeAllBasket.fulfilled, (state, action) => {
+      state.basket = state.basket.filter((product => {
+        return false
+      }))
     })
 
   },
