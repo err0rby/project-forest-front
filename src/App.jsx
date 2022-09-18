@@ -17,12 +17,13 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   const token = useSelector(state => state.applicationSlice.token);
+  const [sum, setSum] = useState(0)
   const [modal, setModal] = useState(false)
 
   if (token) {
     return (
       <>
-        <ModalBuy modal={modal} setModal={setModal} />
+        <ModalBuy modal={modal} setModal={setModal} sum={sum} setSum={setSum} />
         <Headers />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,7 +32,7 @@ function App() {
           <Route path="/signin" element={<Navigate to='/' />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/service" element={<ServiceMap />} />
-          <Route path="/products" element={<ShopMap modal={modal} setModal={setModal} />} />
+          <Route path="/products" element={<ShopMap modal={modal} setModal={setModal} sum={sum} setSum={setSum} />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/service/:id" element={<ServiceOne />} />
         </Routes>

@@ -39,12 +39,15 @@ const Basket = ({ sum, setSum, modal, setModal }) => {
           {basket.map((product, index) => {
             return (
               <div className={styles.basket_item}>
-                <button
-                  onClick={() => handleRemoveFromBasket(product._id, product)}
-                >
-                  x
-                </button>
-                <div key={index}>{product.name}</div>
+                <div className={styles.del_btn}>
+                    <button
+                    onClick={() => handleRemoveFromBasket(product._id, product)}
+                    >
+                    x
+                    </button>
+                </div>
+
+                <div key={index} className={styles.product_name}>{product.name}</div>
                 <div className={styles.img_basket}>
                   <button onClick={() => handleMinus(product._id, product)}>
                     -
@@ -62,12 +65,12 @@ const Basket = ({ sum, setSum, modal, setModal }) => {
                   Количество: {product.countInBasket}
                 </div>
                 <div className={styles.count_Controller}>
-                  {product.price * product.countInBasket}
+                  Цена: {product.price * product.countInBasket}
                 </div>
               </div>
             );
           })}
-          Итого: {sum} <button onClick={() => setModal(true)}>Купить все</button>
+          <div className={styles.buy_all}>Итого: {sum} <button onClick={() => setModal(true)}>Купить все</button></div>
         </div>
       ) : (
         <div className={styles.Basket}>
