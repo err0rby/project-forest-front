@@ -1,4 +1,4 @@
-.BAsket{
+.BAsket {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,8 @@
     overflow: auto;
     transition: 1s all;
 }
-.basket_item{
+
+.basket_item {
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -18,25 +19,29 @@
     border-radius: 5%;
     font-size: 18px;
 }
-.basket_item button{
+
+.basket_item button {
     width: 30px;
     height: 30px;
 }
-.img_basket img{
+
+.img_basket img {
     padding: 10px;
     width: 150px;
     height: 150px;
     border-radius: 15%;
-    
+
 }
-.img_basket{
+
+.img_basket {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Basket{
+
+.Basket {
     width: 100%;
     height: 100%;
     display: flex;
@@ -50,11 +55,12 @@
     font-weight: 900;
 }
 
-.del_btn{
+.del_btn {
     display: flex;
     justify-content: right;
 }
-button{
+
+button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,18 +72,22 @@ button{
     transition: 0.5s all;
     padding: 5px;
 }
-button:hover{
-    background-color: gainsboro;    
+
+button:hover {
+    background-color: gainsboro;
 }
-button:active{
+
+button:active {
     box-shadow: inset 0px 0px 10px 0px rgb(0, 0, 0);
 }
-.product_name{
+
+.product_name {
     text-align: center;
     font-size: 25px;
     font-weight: 900;
 }
-.buy_all{
+
+.buy_all {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,6 +95,11 @@ button:active{
     font-size: 22px;
     padding: 20px;
 }
-.buy_all button{
+
+.buy_all button {
     padding: 5px;
+}
+
+.del {
+    cursor: pointer;
 }

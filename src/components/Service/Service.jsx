@@ -12,7 +12,7 @@ const Service = ({ items }) => {
             <div className={styles.serviceInfo}>
                 <h3 className={styles.serviceName}>{items.name}</h3>
                 <h4 className={styles.serviceDescription}>{`${items.description.substr(0, 125)}...`}</h4>
-                <Link to={items._id}><button className={styles.button}>Узнать больше</button></Link>
+                <Link className={styles.button} to={items._id}><button className={styles.button}>Узнать больше</button></Link>
             </div>
         </div>
     );

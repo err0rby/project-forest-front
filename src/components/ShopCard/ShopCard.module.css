@@ -4,7 +4,7 @@
     transition: 250ms;
 }
 
-.Card:hover{
+.Card:hover {
     width: 320px;
     margin-bottom: 30px;
     transform: scale(1.05);
@@ -19,9 +19,13 @@
     margin: 12px 0;
 }
 
-.Butt button{
+.Butt button {
     color: #ffffff;
     background-color: #98b63c;
     border: none;
     padding: 19px 22px;
+}
+
+.basketButton {
+    cursor: pointer;
 }

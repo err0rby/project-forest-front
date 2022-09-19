@@ -30,7 +30,7 @@ const ServiceOne = () => {
     })
 
     useEffect(() => {
-        
+
         dispatch(fetchServices())
     }, [dispatch])
 
@@ -90,7 +90,7 @@ const ServiceOne = () => {
                             </div>
                             <div className={styles.justBtn}>
                                 <button disabled={!name || !number || !address} onClick={handleAdd} className={styles.buttonService}>Сделать заявку</button>
-                                <ToastContainer />
+                                <ToastContainer className={styles.toast} />
                             </div>
                         </div>
                     </div>

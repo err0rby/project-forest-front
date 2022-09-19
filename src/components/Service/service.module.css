@@ -38,7 +38,7 @@
     cursor: pointer;
     color: #a2c046;
     font: 14px 'Roboto';
-
+    text-decoration: none;
 }
 
 .button:hover {

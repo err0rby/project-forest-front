@@ -27,14 +27,16 @@
     font-size: 17px;
 }
 
-.body{
+.body {
     overflow-x: hidden;
     position: relative;
     z-index: 1;
 }
-.basket{
+
+.basket {
     position: fixed;
-    top: 0;left: 0;
+    top: 0;
+    left: 0;
     width: 30%;
     height: 100vh;
     background-color: rgb(147, 166, 166);
@@ -46,9 +48,11 @@
     justify-content: center;
     flex-direction: column;
 }
-.basket_active{
+
+.basket_active {
     position: fixed;
-    top: 0;left: 0;
+    top: 0;
+    left: 0;
     width: 30%;
     height: 100vh;
     background-color: white;
@@ -60,35 +64,38 @@
     transform: translateX(0%);
     z-index: 5;
     border-right: 1px solid greenyellow;
-    
+
 }
 
-.btn{
+.btn {
     width: 50px;
     height: 50px;
     background-color: none;
     position: absolute;
-    right: -30px;top: 50%;
-
+    right: -30px;
+    top: 50%;
+    cursor: pointer;
 }
-.btn_active{
+
+.btn_active {
     width: 50px;
     height: 50px;
     background-color: none;
     position: absolute;
-    right: -10px;top: 50%;
-    transform: scale(-1,1)
-
+    right: -10px;
+    top: 50%;
+    transform: scale(-1, 1);
+    cursor: pointer;
 }
 
-.bs{
+.bs {
     transition: 0.5s;
     /* margin-top: 70px; */
     transform: translateX(0%);
 }
-.bs_active{
+
+.bs_active {
     transition: 0.5s;
     /* margin-top: 70px; */
     transform: translateX(10%);
 }
-

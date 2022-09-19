@@ -40,23 +40,24 @@ const Basket = ({ sum, setSum, modal, setModal }) => {
             return (
               <div className={styles.basket_item}>
                 <div className={styles.del_btn}>
-                    <button
+                  <button
+                    className={styles.del}
                     onClick={() => handleRemoveFromBasket(product._id, product)}
-                    >
+                  >
                     x
-                    </button>
+                  </button>
                 </div>
 
                 <div key={index} className={styles.product_name}>{product.name}</div>
                 <div className={styles.img_basket}>
-                  <button onClick={() => handleMinus(product._id, product)}>
+                  <button onClick={() => handleMinus(product._id, product)} className={styles.del}>
                     -
                   </button>
                   <img
                     src={`http://localhost:3013/img/${product.image}`}
                     alt="q"
                   />
-                  <button onClick={() => handlePlus(product._id, product)}>
+                  <button onClick={() => handlePlus(product._id, product)} className={styles.del}>
                     +
                   </button>
                 </div>
@@ -70,11 +71,11 @@ const Basket = ({ sum, setSum, modal, setModal }) => {
               </div>
             );
           })}
-          <div className={styles.buy_all}>Итого: {sum} <button onClick={() => setModal(true)}>Купить все</button></div>
+          <div className={styles.buy_all}>Итого: {sum} <button className={styles.del} onClick={() => setModal(true)}>Купить все</button></div>
         </div>
       ) : (
         <div className={styles.Basket}>
-            <span>Нет покупок - нет конфетки</span>
+          <span>Нет покупок - нет конфетки</span>
           <img
             src="https://cdn.icon-icons.com/icons2/1055/PNG/128/17-cart-cat_icon-icons.com_76693.png"
             alt=""

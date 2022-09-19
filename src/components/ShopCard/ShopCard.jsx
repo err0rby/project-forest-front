@@ -38,7 +38,7 @@ const ShopCard = ({ sum, setSum, product, userId }) => {
             ?
             <button disabled={true} >Уже в корзине</button>
             :
-            <button onClick={() => handleAddInBasket(product._id)}>Добавить в корзину</button>
+            <button onClick={() => handleAddInBasket(product._id)} className={styles.basketButton}>Добавить в корзину</button>
         }
       </div>
     </div>
