@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# Сайт по оказанию услуг ландшафтного дизайна
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Это групповой проект, выполненный студентами школы программирования <a href="https://intocode.ru/" target="_blank">Intocode</a>.</p>
 
-## Available Scripts
+<p><a href="https://blooming-castle-56069.herokuapp.com/" target="_blank">🌎 сайт проекта</a></p>
 
-In the project directory, you can run:
+## Функционал сайта
 
-### `npm start`
+- Авторизация
+- Просмотр различных видов услуг по ландшафтному дизайну
+- Подробный просмотр каждой услуги
+- Возможность оставления отзывов
+- Добавление продукта в корзину
+- Удаление продукта из корзины
+- Отрисовка заявки на услугу у администратора
+- Возможность увелечения и уменьшения количества продуктов из корзины
+- Возможность просмотра объектов до и после нашей работы
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Ниже представлена работа нашего проекта
 
-### `npm test`
+![THE FOREST - Google Chrome 2022-10-13 15-01-23](https://user-images.githubusercontent.com/105623098/195591761-195b753c-1bde-4a92-8f29-4dbd28c29277.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Запуск проекта
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Для запуска проекта вам необходимо набрать команду в терминале:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+npm i
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+После набрать команду:
 
-### `npm run eject`
+```javascript
+npm run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Технологии проекта
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p>
+  <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=for-the-badge&logo=react&logoColor=white" />
+  <img alt="Github" src="https://img.shields.io/badge/-Github-black?style=for-the-badge&logo=github&logoColor=white" />
+  <img alt="Redux" src="https://img.shields.io/badge/-Redux-430098?style=for-the-badge&logo=redux&logoColor=white" />
+  <img alt="Redux-Thunk" src="https://img.shields.io/badge/-Redux_Toolkit-white?style=for-the-badge&logo=Redux&logoColor=430098" />
+  <img alt="JSON-Server" src="https://img.shields.io/badge/-JSON_Server-white?style=for-the-badge&logo=JSON&logoColor=black" />
+  <img alt="React-Router" src="https://img.shields.io/badge/-React_Router-black?style=for-the-badge&logo=react-router&logoColor=orange" />
+  <img alt="Prettier" src="https://img.shields.io/badge/-Prettier-grey?style=for-the-badge&logo=Prettier&logoColor=orange" />
+  <img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=for-the-badge&logo=Node.js&logoColor=white" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-yellow?style=for-the-badge&logo=JavaScript&logoColor=white" />
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Команда проекта
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+<h3>
+  <a href="https://github.com/err0rby">
+    <img alt="Muhammad" src="https://img.shields.io/badge/-Muhammad_Didaev-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</h3>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<h3>
+  <a href="https://github.com/GooA-NA">
+    <img alt="Gudeshev" src="https://img.shields.io/badge/-Nasir_Gudeshev-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</h3>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h3>
+  <a href="https://github.com/Sanmov13">
+    <img alt="Kantaev" src="https://img.shields.io/badge/-Kantaev_Movsan-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</h3>
 
-### Code Splitting
+<h3>
+  <a hrefhttps://github.com/SaluevS">
+    <img alt="Saluev" src="https://img.shields.io/badge/-Saluev_Ibragim-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</h3>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<h3>
+  <a href="https://github.com/mrMovsar">
+    <img alt="Tsokaev" src="https://img.shields.io/badge/-Movsar_Tsokaev-black?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</h3>
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### В этом проекте я выполнял следующие задачи:
 
-### Making a Progressive Web App
+- [x] Сверстал страницу, где все услуги 
+- [x] Организовал роутинг-маршрутизация внутри проекта
+- [x] Сверстал страницу отдельной услуги
+- [x] Сделал возможность оформления заявки
+- [x] Сделал возможность подробного просмотра отдельной услуги
+- [x] Сделал возможность принятия заявки у админа
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+Установил следующие библиотеки в зависимости:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- react-redux
+- react-toastify
+- react-router-dom
+- react-loader-spinner
+- prop-types
+- react-circular-progressbar
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Для выполнения поставленных задач я использовал следующие библиотеки:
 
-### `npm run build` fails to minify
+- redux, redux-toolkit - чтобы создавать асинхронные экшены
+- react-router-dom - для роутинга
+- aos - для анимаций
+- react-loader-spinner - для прелоадеров
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
