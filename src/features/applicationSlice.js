@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { serverUrl } from "../serverUrl.js";
 
 const initialState = {
     error: null,
@@ -10,7 +11,8 @@ const initialState = {
 
 export const authSignUp = createAsyncThunk('auth/signup', async ({ login, password }, thunkAPI) => {
     try {
-        const res = await fetch('http://localhost:3013/user', {
+        // const request = await fetch(`${serverUrl}/todos/${id}`);
+        const res = await fetch(`${serverUrl}/user`, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json"
@@ -31,7 +33,7 @@ export const authSignUp = createAsyncThunk('auth/signup', async ({ login, passwo
 
 export const authSignIn = createAsyncThunk('auth/signin', async ({ login, password }, thunkAPI) => {
     try {
-        const res = await fetch('http://localhost:3013/login', {
+        const res = await fetch(`${serverUrl}/login`, {
             method: 'POST',
             headers: {
                 "Content-type": "application/json"

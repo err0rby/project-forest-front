@@ -2,12 +2,13 @@ import React from 'react';
 import styles from './service.module.css'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { serverUrl } from '../../serverUrl';
 
 const Service = ({ items }) => {
     return (
         <div className={styles.serviceMain}>
             <div className={styles.serviceImages}>
-                <img className={styles.imageService} alt='asd' src={`http://localhost:3013/img/${items.image}`} />
+                <img className={styles.imageService} alt='asd' src={`${serverUrl}/img/${items.image}`} />
             </div>
             <div className={styles.serviceInfo}>
                 <h3 className={styles.serviceName}>{items.name}</h3>

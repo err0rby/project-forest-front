@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { serverUrl } from "../serverUrl";
 
 const initialState = {
     comments: [],
@@ -6,7 +7,7 @@ const initialState = {
 
 export const fetchComms = createAsyncThunk('comms/fetch', async (_, thunkAPI) => {
     try {
-        const res = await fetch('http://localhost:3013/comments');
+        const res = await fetch(`${serverUrl}/comments`);
         const data = await res.json();
         return data;
     } catch (error) {
@@ -16,7 +17,7 @@ export const fetchComms = createAsyncThunk('comms/fetch', async (_, thunkAPI) =>
 
 export const addComms = createAsyncThunk('comms/add', async ({ name, text }, thunkAPI) => {
     try {
-        const res = await fetch('http://localhost:3013/comments', {
+        const res = await fetch(`${serverUrl}/comments`, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${thunkAPI.getState().applicationSlice.token}`,
@@ -36,7 +37,7 @@ export const addComms = createAsyncThunk('comms/add', async ({ name, text }, thu
 
 export const addLike = createAsyncThunk('like/add', async ({ name, id }, thunkAPI) => {
     try {
-        const res = await fetch(`http://localhost:3013/comments/${id}`, {
+        const res = await fetch(`${serverUrl}/comments/${id}`, {
             method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${thunkAPI.getState().applicationSlice.token}`,
@@ -53,7 +54,7 @@ export const addLike = createAsyncThunk('like/add', async ({ name, id }, thunkAP
 
 export const deleteLike = createAsyncThunk('like/delete', async ({ name, id }, thunkAPI) => {
     try {
-        const res = await fetch(`http://localhost:3013/comments/del/${id}`, {
+        const res = await fetch(`${serverUrl}/comments/del/${id}`, {
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${thunkAPI.getState().applicationSlice.token}`,
@@ -70,7 +71,7 @@ export const deleteLike = createAsyncThunk('like/delete', async ({ name, id }, t
 
 export const deleteComm = createAsyncThunk('comment/delete', async (id, thunkAPI) => {
     try {
-        const res = await fetch(`http://localhost:3013/comments/${id}`, {
+        const res = await fetch(`${serverUrl}/comments/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${thunkAPI.getState().applicationSlice.token}`,
@@ -99,22 +100,22 @@ const commentSlice = createSlice({
             .addCase(deleteComm.fulfilled, (state, action) => {
                 state.comments = state.comments.filter((com) => com._id !== action.payload)
             })
-        .addCase(addLike.fulfilled, (state, action) => {
-            state.comments = state.comments.map((item) => {
-                if (item._id === action.payload.id) {
-                    item.likes.push(action.payload.name);
-                }
-                return item;
+            .addCase(addLike.fulfilled, (state, action) => {
+                state.comments = state.comments.map((item) => {
+                    if (item._id === action.payload.id) {
+                        item.likes.push(action.payload.name);
+                    }
+                    return item;
+                })
             })
-        })
-        .addCase(deleteLike.fulfilled, (state, action) => {
-            state.comments = state.comments.map((item) => {
-                if (item._id === action.payload.id) {
-                    item.likes.pop(action.payload.name)
-                }
-                return item
+            .addCase(deleteLike.fulfilled, (state, action) => {
+                state.comments = state.comments.map((item) => {
+                    if (item._id === action.payload.id) {
+                        item.likes.pop(action.payload.name)
+                    }
+                    return item
+                })
             })
-        })
     }
 });
 

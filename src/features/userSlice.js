@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { serverUrl } from "../serverUrl";
 
 const initialState = {
     users: [],
@@ -6,7 +7,7 @@ const initialState = {
 
 export const fetchUsers = createAsyncThunk('users/fetch', async (_, thunkAPI) => {
     try {
-        const res = await fetch('http://localhost:3013/user');
+        const res = await fetch(`${serverUrl}/user`);
         const data = await res.json();
         return data;
     } catch (error) {

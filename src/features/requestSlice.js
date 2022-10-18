@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { serverUrl } from "../serverUrl";
 
 const initialState = {
     requests: [],
@@ -7,7 +8,7 @@ const initialState = {
 
 export const fetchRequest = createAsyncThunk('request/fetch', async (_, thunkAPI) => {
     try {
-        const res = await fetch('http://localhost:3013/requests');
+        const res = await fetch(`${serverUrl}/requests`);
         const data = res.json();
         return data;
     } catch (error) {
@@ -20,7 +21,7 @@ export const addRequest = createAsyncThunk(
     async ({ name, number, address, id }, thunkAPI) => {
         console.log(name, number, address, id);
         try {
-            const res = await fetch('http://localhost:3013/request', {
+            const res = await fetch(`${serverUrl}/request`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': "application/json"
@@ -41,7 +42,7 @@ export const delRequest = createAsyncThunk(
     'delete/request',
     async (id, thunkAPI) => {
         try {
-            const res = await fetch(`http://localhost:3013/request/${id}`, {
+            const res = await fetch(`${serverUrl}/request/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

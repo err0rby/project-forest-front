@@ -5,6 +5,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import PropTypes from 'prop-types';
+import { serverUrl } from "../../serverUrl";
+
 const ShopCard = ({ sum, setSum, product, userId }) => {
   const basket = useSelector((state) => state.shopSlice.basket);
 
@@ -22,7 +24,7 @@ const ShopCard = ({ sum, setSum, product, userId }) => {
   return (
     <div data-aos="zoom-in-up" className={styles.Card}>
       <div className={styles.image}>
-        <img src={`http://localhost:3013/img/${product.image}`} alt="q" />
+        <img src={`${serverUrl}/img/${product.image}`} alt="q" />
       </div>
       <div className={styles.about}>
         <div className={styles.text}>
