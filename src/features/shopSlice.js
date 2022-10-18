@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { serverUrl } from "../serverUrl";
 
 const initialState = {
   products: [],
@@ -10,7 +11,7 @@ export const getProducts = createAsyncThunk(
   "products/get",
   async (data, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3013/products");
+      const res = await fetch(`${serverUrl}/products`);
       const products = await res.json();
       return products;
     } catch (e) {
@@ -23,7 +24,7 @@ export const PushInBasket = createAsyncThunk(
   "user/patch",
   async ({ userId, productId, product }, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3013/basket", {
+      const res = await fetch(`${serverUrl}/basket`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -41,7 +42,7 @@ export const fetchBasket = createAsyncThunk(
   "user/fetch",
   async ({ userId }, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3013/basket/${userId}`);
+      const res = await fetch(`${serverUrl}/basket/${userId}`);
       const user = await res.json();
       return user;
     } catch (e) {
@@ -54,7 +55,7 @@ export const removeFromBasket = createAsyncThunk(
   async ({ userId, productId, product }, thunkAPI) => {
     try {
       console.log(userId, productId);
-      const res = await fetch("http://localhost:3013/basket/remove", {
+      const res = await fetch(`${serverUrl}/basket/remove`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -73,7 +74,7 @@ export const removeAllBasket = createAsyncThunk(
   "basketAll/remove",
   async ({ userId }, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3013/allBasket/remove", {
+      const res = await fetch(`${serverUrl}/allBasket/remove`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -91,7 +92,7 @@ export const countPlus = createAsyncThunk(
   "user/plus",
   async ({ productId }, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3013/basket/plus", {
+      const res = await fetch(`${serverUrl}/basket/plus`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -109,7 +110,7 @@ export const countMinus = createAsyncThunk(
   "user/minus",
   async ({ productId }, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:3013/basket/minus", {
+      const res = await fetch(`${serverUrl}/basket/minus`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"

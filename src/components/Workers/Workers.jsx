@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "../Workers/Workers.module.css";
 import { fetchWorkers } from "../../features/workersSlice";
 import Aos from "aos";
+import { serverUrl } from "../../serverUrl";
 
 const Workers = () => {
   const workers = useSelector((state) => state.workersSlice.workers);
@@ -20,7 +21,7 @@ const Workers = () => {
           return (
             <div data-aos='zoom-in' className={styles.worker_card}>
               <div className={styles.worker_card_image}>
-                <img src={`http://localhost:3013/img/${item.image}`} alt="" />
+                <img src={`${serverUrl}/img/${item.image}`} alt="" />
               </div>
               <div className={styles.worker_card_info}>
                 <p className={styles.name}>{item.name}</p>

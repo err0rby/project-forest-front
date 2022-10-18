@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { delRequest, fetchRequest } from '../../features/requestSlice';
 import style from './Admin.module.css';
 import { Triangle } from 'react-loader-spinner';
+import { serverUrl } from '../../serverUrl';
 
 const Admin = () => {
     const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const Admin = () => {
             <div className={style.mainCard}>
                 <div className={style.wrapper}>{requests.map((req) => {
                     return <div className={style.card}>
-                        <div className={style.imag}><img width={300} src={`http://localhost:3013/img/${req.workDescription.image}`} alt='asadasd' /></div>
+                        <div className={style.imag}><img width={300} src={`${serverUrl}/img/${req.workDescription.image}`} alt='asadasd' /></div>
                         <div className={style.pad}> Имя:{req.yourName}</div>
                         <div> Адрес:{req.yourAddress}</div>
                         <div> Номер телефона:{req.phoneNumber}</div>

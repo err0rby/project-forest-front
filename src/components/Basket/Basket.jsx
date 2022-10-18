@@ -7,6 +7,7 @@ import {
   removeFromBasket,
 } from "../../features/shopSlice";
 import styles from "./Basket.module.css";
+import { serverUrl } from "../../serverUrl";
 
 const Basket = ({ sum, setSum, modal, setModal }) => {
   const basket = useSelector((state) => state.shopSlice.basket);
@@ -54,7 +55,7 @@ const Basket = ({ sum, setSum, modal, setModal }) => {
                     -
                   </button>
                   <img
-                    src={`http://localhost:3013/img/${product.image}`}
+                    src={`${serverUrl}/img/${product.image}`}
                     alt="q"
                   />
                   <button onClick={() => handlePlus(product._id, product)} className={styles.del}>

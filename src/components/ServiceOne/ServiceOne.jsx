@@ -8,7 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { Triangle } from 'react-loader-spinner'
+import { Triangle } from 'react-loader-spinner';
+import { serverUrl } from '../../serverUrl';
 
 const ServiceOne = () => {
     const [name, setName] = useState('')
@@ -78,7 +79,7 @@ const ServiceOne = () => {
                         </div>
                         <div className={styles.serviceOneAll}>
                             <h3 className={styles.serviceOneDesc}>{elem.description}</h3>
-                            <img className={styles.serviceOneImage} src={`http://localhost:3013/img/${elem.image}`} alt='asdasdfdsa' />
+                            <img className={styles.serviceOneImage} src={`${serverUrl}/img/${elem.image}`} alt='asdasdfdsa' />
                         </div>
                         <div className={styles.serviceRequest}>
                             <div className={styles.firstInput}>
